@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "./lib/cnn_cli_app"
+
+CNNCLIApp::CLI.new.call
