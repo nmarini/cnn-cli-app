@@ -4,6 +4,7 @@ class CNNCLIApp::CLI
     # put all of the methods you make in this method
     puts "Welcome to the CNN CLI App!"
     menu
+    goodbye
 
   end
 
@@ -33,5 +34,9 @@ class CNNCLIApp::CLI
       end
     end
   end
+
+  def goodbye 
+    puts "Please come back to keep up with CNN!"
+  end 
 
 end
