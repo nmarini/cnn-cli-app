@@ -25,6 +25,7 @@ class CNNCLIApp::CLI
       input = gets.strip.downcase
       if input == "1"
         puts "list of CNN ANALYSIS stories"
+        # then should be able to choose a story to learn more about 
       elsif input == "2"
         puts "list of TODAY IN POLITICS stories"
       elsif input == "3"
@@ -35,8 +36,8 @@ class CNNCLIApp::CLI
     end
   end
 
-  def goodbye 
+  def goodbye
     puts "Please come back to keep up with CNN!"
-  end 
+  end
 
 end
