@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require "bundler/setup"
-require "cnn_cli_app"
-
-CNN::CLI.new.call
