@@ -8,13 +8,17 @@ class CNNCLIApp::CLI
 
   end
 
-  def list_categories
+  def list_categories(category)
     puts "News Story Categories"
-    puts <<-DOC
-    1. CNN ANALYSIS
-    2. TODAY IN POLITICS
-    3. TOP STORIES
-    DOC
+
+    Story.all_stories.map.with_index(1) {|story, i| puts "#{i}. #{story.category}"}.uniq
+  end
+
+    # puts <<-DOC
+    # 1. CNN ANALYSIS
+    # 2. TODAY IN POLITICS
+    # 3. TOP STORIES
+    # DOC
   end
 
   def menu

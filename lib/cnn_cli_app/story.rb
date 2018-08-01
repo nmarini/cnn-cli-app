@@ -5,6 +5,10 @@ class CNNCLIApp::Story
 
   @@stories = []
 
+  def self.all_stories
+    @@stories
+  end
+
   def self.scrape_analysis
     doc = Nokogiri::HTML(open("https://www.cnn.com/?refresh=1"))
 
