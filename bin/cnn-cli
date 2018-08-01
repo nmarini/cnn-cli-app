@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# require "bundler/setup"
+
 require "./lib/cnn_cli_app"
 CNNCLIApp::Story.new.class.scrape_analysis
 # CNNCLIApp::CLI.new.call

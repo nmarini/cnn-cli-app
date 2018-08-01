@@ -8,7 +8,7 @@ class CNNCLIApp::CLI
 
   end
 
-  def categories
+  def list_categories
     puts "News Story Categories"
     puts <<-DOC
     1. CNN ANALYSIS
@@ -20,12 +20,12 @@ class CNNCLIApp::CLI
   def menu
     input = nil
     until input == "exit"
-      categories
-      puts "Please enter a number that corresponds to your category choice:"
+      list_categories
+      puts "Please enter a number that corresponds to your category choice or type \"exit\" to leave:"
       input = gets.strip.downcase
       if input == "1"
         puts "list of CNN ANALYSIS stories"
-        # then should be able to choose a story to learn more about 
+        # then should be able to choose a story to learn more about
       elsif input == "2"
         puts "list of TODAY IN POLITICS stories"
       elsif input == "3"

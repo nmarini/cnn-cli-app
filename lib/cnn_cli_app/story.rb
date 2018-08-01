@@ -7,8 +7,12 @@ class CNNCLIApp::Story
 
   def self.scrape_analysis
     doc = Nokogiri::HTML(open("https://www.cnn.com/?refresh=1"))
-binding.pry
+
     story = self.new
+    story.title = doc.search
+    story.author =
+    story.description =
+    story.category =
   end
 
 end
