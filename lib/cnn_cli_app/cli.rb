@@ -8,11 +8,11 @@ class CNNCLIApp::CLI
 
   end
 
-  def list_categories(category)
+  def list_categories
     puts "News Story Categories"
 
     Story.all_stories.map.with_index(1) {|story, i| puts "#{i}. #{story.category}"}.uniq
-  end
+
 
     # puts <<-DOC
     # 1. CNN ANALYSIS
@@ -24,7 +24,7 @@ class CNNCLIApp::CLI
   def menu
     input = nil
     until input == "exit"
-      list_categories
+      # list_categories
       puts "Please enter a number that corresponds to your category choice or type \"exit\" to leave:"
       input = gets.strip.downcase
       if input == "1"

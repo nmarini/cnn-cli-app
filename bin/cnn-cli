@@ -2,5 +2,5 @@
 
 
 require "./lib/cnn_cli_app"
-CNNCLIApp::Story.new.class.scrape_analysis
+CNNCLIApp::Story.new.class.scrape_top_stories
 # CNNCLIApp::CLI.new.call

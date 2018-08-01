@@ -9,14 +9,15 @@ class CNNCLIApp::Story
     @@stories
   end
 
-  def self.scrape_analysis
+  def self.scrape_top_stories
     doc = Nokogiri::HTML(open("https://www.cnn.com/?refresh=1"))
 
     story = self.new
-    story.title = doc.search
-    story.author =
-    story.description =
-    story.category =
+    story.title = doc.search()
+    # story.author =
+    # story.description =
+    # story.category =
+    binding.pry
   end
 
 end
