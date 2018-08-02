@@ -23,17 +23,16 @@ class NPRCLIApp::Story
 
     featured_stories = doc.search('section.featured-group')
     featured_stories.each do |article|
-      article.search('a').each do |s|
-
+      article.search('article.hp-item').each do |s|
 
       story = NPRCLIApp::Story.new
 
-      # story.title = s.search('div.slug-wrap h3.title').text
+      # story.title = s.children[1].attr('alt')
       # story.category =
-      # story.link =
+      # story.link = s.attr('href')
 
       binding.pry
-
+    end
     end
   end
 
