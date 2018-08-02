@@ -2,5 +2,6 @@
 
 
 require "./lib/npr_cli_app"
-NPRCLIApp::Story.new.class.scrape_top_stories
+# NPRCLIApp::Story.new.class.scrape_top_stories
 # NPRCLIApp::CLI.new.call
+NPRCLIApp::Story.new.class.scrape_top
