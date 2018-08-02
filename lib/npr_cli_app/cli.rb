@@ -2,14 +2,14 @@ class NPRCLIApp::CLI
 
   def call
     # put all of the methods you make in this method
-    puts "Welcome to the NPR CLI App!"
+    puts "Welcome to the NPR CLI App! Get news in technology from NPR here!"
     menu
     goodbye
 
   end
 
   def list_categories
-    puts "News Story Categories"
+    puts "News categories in technology:"
 
     Story.all_stories.map.with_index(1) {|story, i| puts "#{i}. #{story.category}"}.uniq
 

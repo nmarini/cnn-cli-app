@@ -12,8 +12,8 @@ class NPRCLIApp::Story
   def self.scrape_top_stories
     doc = Nokogiri::HTML(open("https://www.npr.org/sections/national/"))
 
-    # law category = doc.search('h2.branding__title').text
-    #stories under law category = doc.search('div.item-info h2.title')
+    # featured news =
+    #other stories =
 
     # story.title = doc.search()
     # story.author =
