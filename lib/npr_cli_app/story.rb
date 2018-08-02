@@ -1,7 +1,7 @@
 
 
 class NPRCLIApp::Story
-  attr_accessor :title, :author, :description, :category
+  attr_accessor :title, :category, :link
 
   @@stories = []
 
@@ -9,20 +9,20 @@ class NPRCLIApp::Story
     @@stories
   end
 
-  def self.scrape_top_stories
-    doc = Nokogiri::HTML(open("https://www.npr.org/sections/national/"))
+  def self.scrape_top
+    doc = Nokogiri::HTML(open("https://www.npr.org"))
+    top_story = NPRCLIApp::Story.new
+    top_story.title =
+    top_story.category =
+    top_story.link =
+  binding.pry
+  end
 
-    # featured news =
-    #other stories =
+  def self.scrape_featured
+    doc = Nokogiri::HTML(open("https://www.npr.org"))
 
-    # story.title = doc.search()
-    # story.author =
-    # story.description =
-    # story.category =
-    binding.pry
+
+
   end
 
 end
-#homepage1-zone-1 div.l-container div div.column.zn__column--idx-1 ul h2
-#//div[2]/div/div[2]/ul/h2
-#doc.xpath("//div[contains(@class, 'zn__containers')]")
