@@ -2,11 +2,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cnn_cli_app/version"
+require "npr_cli_app/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cnn_cli_app"
-  spec.version       = CNNCLIApp::VERSION
+  spec.name          = "npr_cli_app"
+  spec.version       = NPRCLIApp::VERSION
   spec.authors       = ["'Nicolas Marini'"]
   spec.email         = ["'nmarini44@gmail.com'"]
 

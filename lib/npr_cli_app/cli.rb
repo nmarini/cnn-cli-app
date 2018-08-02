@@ -1,8 +1,8 @@
-class CNNCLIApp::CLI
+class NPRCLIApp::CLI
 
   def call
     # put all of the methods you make in this method
-    puts "Welcome to the CNN CLI App!"
+    puts "Welcome to the NPR CLI App!"
     menu
     goodbye
 
@@ -14,11 +14,7 @@ class CNNCLIApp::CLI
     Story.all_stories.map.with_index(1) {|story, i| puts "#{i}. #{story.category}"}.uniq
 
 
-    # puts <<-DOC
-    # 1. CNN ANALYSIS
-    # 2. TODAY IN POLITICS
-    # 3. TOP STORIES
-    # DOC
+
   end
 
   def menu
@@ -28,7 +24,7 @@ class CNNCLIApp::CLI
       puts "Please enter a number that corresponds to your category choice or type \"exit\" to leave:"
       input = gets.strip.downcase
       if input == "1"
-        puts "list of CNN ANALYSIS stories"
+        puts "list of NPR ANALYSIS stories"
         # then should be able to choose a story to learn more about
       elsif input == "2"
         puts "list of TODAY IN POLITICS stories"
@@ -41,7 +37,7 @@ class CNNCLIApp::CLI
   end
 
   def goodbye
-    puts "Please come back to keep up with CNN!"
+    puts "Please come back to keep up with NPR!"
   end
 
 end
