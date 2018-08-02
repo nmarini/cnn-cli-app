@@ -23,9 +23,18 @@ class NPRCLIApp::Story
 
     featured_stories = doc.search('section.featured-group')
     featured_stories.each do |article|
+      article.search('a').each do |s|
+
+
       story = NPRCLIApp::Story.new
 
-  binding.pry
+      # story.title = s.search('div.slug-wrap h3.title').text
+      # story.category =
+      # story.link =
+
+      binding.pry
+
+    end
   end
 
 end
