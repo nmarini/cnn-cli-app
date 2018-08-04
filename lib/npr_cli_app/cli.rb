@@ -14,7 +14,7 @@ class NPRCLIApp::CLI
 
 
 
-  t = NPRCLIApp::Story.all_stories[1][:category]
+  t = NPRCLIApp::Story.all_stories
   binding.pry
 
   end
