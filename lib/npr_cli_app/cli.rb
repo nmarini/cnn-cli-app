@@ -9,22 +9,24 @@ class NPRCLIApp::CLI
   end
 
   def list_categories
-    puts "News categories in technology:"
-
-    Story.all_stories.map.with_index(1) {|story, i| puts "#{i}. #{story.category}"}.uniq
+    puts "News categories:"
 
 
+
+
+  t = NPRCLIApp::Story.all_stories[1][:category]
+  binding.pry
 
   end
 
   def menu
     input = nil
     until input == "exit"
-      # list_categories
+      list_categories
       puts "Please enter a number that corresponds to your category choice or type \"exit\" to leave:"
       input = gets.strip.downcase
       if input == "1"
-        puts "list of NPR ANALYSIS stories"
+        puts "List of NPR ANALYSIS stories"
         # then should be able to choose a story to learn more about
       elsif input == "2"
         puts "list of TODAY IN POLITICS stories"

@@ -6,22 +6,25 @@ class NPRCLIApp::Story
   @@stories = []
 
   def initialize
-    @@stories << self 
-  end 
+    @@stories << self
+  end
 
   def self.all_stories
-    @@stories
+    @@stories << self.scrape_top_story
+    @@stories << self.scrape_featured
+
   end
 
   def self.scrape_top_story
     story = []
     doc = Nokogiri::HTML(open("https://www.npr.org"))
     top_story = NPRCLIApp::Story.new
-    top_title = doc.search('h3.title').first.text
-    top_category = doc.search('h2.slug a').first.text.strip
-    top_link = doc.search('div.story-text a')[1].attr('href')
+    top_story.title = doc.search('h3.title').first.text
+    top_story.category = doc.search('h2.slug a').first.text.strip
+    top_story.link = doc.search('div.story-text a')[1].attr('href')
 
-    story << {title: top_title, categor: top_category, link: top_link} 
+    story << top_story
+    story
   end
 
   def self.scrape_featured
@@ -31,15 +34,15 @@ class NPRCLIApp::Story
     featured_stories = doc.search('section.featured-group')
     featured_stories.search('div.story-wrap').each do |article|
         story = NPRCLIApp::Story.new
-        
-        story_title = article.search('h3').text
-        story_category = article.search('h2').text.strip
-        story_link = article.search('a').attr('href').value
-        scrape_stories << {title: story_title, link: story_link, category: story_category}
-        
+
+        story.title = article.search('h3').text
+        story.category = article.search('h2').text.strip
+        story.link = article.search('a').attr('href').value
+        scrape_stories << story
+
     end
     scrape_stories
-    
+
   end
 
 end
