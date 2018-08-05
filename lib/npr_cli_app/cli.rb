@@ -14,7 +14,7 @@ class NPRCLIApp::CLI
 
 
 
-  t = NPRCLIApp::Story.all_stories
+  NPRCLIApp::Story.all_stories.each.with_index(1){|story, i| puts "#{i}. #{story.category}"}.uniq
   binding.pry
 
   end

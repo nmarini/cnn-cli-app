@@ -41,7 +41,6 @@ class NPRCLIApp::Story
 
     end
     scrape_stories
-
   end
 
 end
