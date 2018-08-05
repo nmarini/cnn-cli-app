@@ -40,3 +40,4 @@ class NPRCLIApp::Story
   end
 
 end
+1
