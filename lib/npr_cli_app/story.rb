@@ -5,11 +5,12 @@ class NPRCLIApp::Story
 
   @@stories = []
 
-
-
-  def self.all_stories
+  def self.add_stories
     self.scrape_top_story
     self.scrape_featured
+  end
+
+  def self.all_stories
     @@stories
 
   end
