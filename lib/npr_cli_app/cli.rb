@@ -8,20 +8,23 @@ class NPRCLIApp::CLI
 
   end
 
+  def top_story
+    puts "Top Story:"
+    puts "#{NPRCLIApp::Story.scrape_top_story.title}"
+
+  end
+
   def list_categories
     puts "News categories:"
 
-
-
-
   NPRCLIApp::Story.all_stories.each.with_index(1){|story, i| puts "#{i}. #{story.category}"}.uniq
-  binding.pry
 
   end
 
   def menu
     input = nil
     until input == "exit"
+      top_story
       list_categories
       puts "Please enter a number that corresponds to your category choice or type \"exit\" to leave:"
       input = gets.strip.downcase
