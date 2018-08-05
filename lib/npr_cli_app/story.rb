@@ -5,8 +5,7 @@ class NPRCLIApp::Story
 
   def self.add_stories
     @@stories << self.scrape_top_story
-
-    @@stories << self.scrape_featured
+    self.scrape_featured.each{|story| @@stories << story}
   end
 
   def self.all_stories
