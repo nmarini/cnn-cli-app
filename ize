@@ -1,0 +1,30 @@
+=> [[32m#<NPRCLIApp::Story:0x00000001a85178[0m
+  @category[32m=[0m[31m[1;31m"[0m[31mShots - Health News[1;31m"[0m[31m[0m,
+  @link[32m=[0m
+   [31m[1;31m"[0m[31mhttps://www.npr.org/sections/health-shots/2018/08/05/635475707/wildfire-trauma-revisited[1;31m"[0m[31m[0m,
+  @title[32m=[0m
+   [31m[1;31m"[0m[31mCalifornia Wildfires Reignite Old Trauma For Survivors Of Last Year's Blazes[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<NPRCLIApp::Story:0x00000001bf06c0[0m
+  @category[32m=[0m[31m[1;31m"[0m[31mShots - Health News[1;31m"[0m[31m[0m,
+  @link[32m=[0m
+   [31m[1;31m"[0m[31mhttps://www.npr.org/sections/health-shots/2018/08/05/635475707/wildfire-trauma-revisited[1;31m"[0m[31m[0m,
+  @title[32m=[0m
+   [31m[1;31m"[0m[31mCalifornia Wildfires Reignite Old Trauma For Survivors Of Last Year's Blazes[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<NPRCLIApp::Story:0x00000001b70d58[0m
+  @category[32m=[0m[31m[1;31m"[0m[31mNational Security[1;31m"[0m[31m[0m,
+  @link[32m=[0m
+   [31m[1;31m"[0m[31mhttps://www.npr.org/2018/08/05/635380840/defense-budget-shifts-militarys-focus-from-terrorism-to-china-and-russia[1;31m"[0m[31m[0m,
+  @title[32m=[0m
+   [31m[1;31m"[0m[31mDefense Budget Shifts Military's Focus From Terrorism To China And Russia[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<NPRCLIApp::Story:0x00000001b69a08[0m
+  @category[32m=[0m[31m[1;31m"[0m[31mMovie Interviews[1;31m"[0m[31m[0m,
+  @link[32m=[0m
+   [31m[1;31m"[0m[31mhttps://www.npr.org/2018/08/05/635462094/a-sexual-underground-surfaces-in-scotty-and-the-secret-history-of-hollywood[1;31m"[0m[31m[0m,
+  @title[32m=[0m
+   [31m[1;31m"[0m[31mA Sexual Underground Surfaces In 'Scotty And The Secret History Of Hollywood'[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<NPRCLIApp::Story:0x00000001b63ae0[0m
+  @category[32m=[0m[31m[1;31m"[0m[31mNational[1;31m"[0m[31m[0m,
+  @link[32m=[0m
+   [31m[1;31m"[0m[31mhttps://www.npr.org/2018/08/05/635127389/majority-of-black-americans-value-social-media-for-amplifying-lesser-known-issue[1;31m"[0m[31m[0m,
+  @title[32m=[0m
+   [31m[1;31m"[0m[31mMajority Of Black Americans Value Social Media For Amplifying Lesser-Known Issues[1;31m"[0m[31m[0m[32m>[0m]

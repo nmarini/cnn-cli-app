@@ -1,13 +1,12 @@
-
-
 class NPRCLIApp::Story
   attr_accessor :title, :link, :category
 
   @@stories = []
 
   def self.add_stories
-    self.scrape_top_story
-    self.scrape_featured
+    @@stories << self.scrape_top_story
+
+    @@stories << self.scrape_featured
   end
 
   def self.all_stories
@@ -21,8 +20,6 @@ class NPRCLIApp::Story
     top_story.title = doc.search('h3.title').first.text
     top_story.category = doc.search('h2.slug a').first.text.strip
     top_story.link = doc.search('div.story-text a')[1].attr('href')
-
-    @@stories << top_story
     top_story
   end
 
@@ -37,7 +34,6 @@ class NPRCLIApp::Story
         story.title = article.search('h3').text
         story.category = article.search('h2').text.strip
         story.link = article.search('a').attr('href').value
-        @@stories << story
         scrape_stories << story
 
     end

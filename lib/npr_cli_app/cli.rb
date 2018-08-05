@@ -1,27 +1,29 @@
 class NPRCLIApp::CLI
 
   def call
-    # put all of the methods you make in this method
-    puts "Welcome to the NPR CLI App! Get  the most current news from NPR here!"
-    menu
+    puts "Welcome to the NPR CLI App! Get the most up-to-date news here from NPR!"
+    top_story
+    category_menu
     goodbye
 
   end
 
+  def top_story
+  NPRCLIApp::Story.scrape_top_story.title
+
+  end
+
   def list_categories
-    puts "Top Story:"
-    puts "1. #{NPRCLIApp::Story.scrape_top_story.title}"
-    puts "News categories:"
 
-    NPRCLIApp::Story.all_stories.each.with_index(2){|story, i| puts "#{i}. #{story.category}"}.uniq
-
+  t =  NPRCLIApp::Story.all_stories
+binding.pry
   end
 
   def add_stories
     NPRCLIApp::Story.add_stories
   end
 
-  def menu
+  def category_menu
     input = nil
     add_stories
     list_categories
@@ -36,7 +38,6 @@ class NPRCLIApp::CLI
         puts "list of TOP STORIES"
       else
         puts "Please enter a number that corresponds to your category choice:"
-        list_categories
       end
     end
   end
