@@ -1,10 +1,6 @@
 class NPRCLIApp::CLI
 
   @@categories = []
-
-  def self.categories
-    @@categories 
-  end  
     
 
   def call
@@ -28,10 +24,6 @@ class NPRCLIApp::CLI
    NPRCLIApp::Story.scrape_featured.each{|story| @@categories << story.category.downcase}
    @@categories.uniq.each.with_index(1){|category, i| puts "#{i}. #{category.upcase}" if category =~ /[a-z]/i}
   end
-
-  # def add_stories
-  #   NPRCLIApp::Story.add_stories
-  # end
 
   def instructions
     puts "ENTER:"
@@ -68,8 +60,10 @@ class NPRCLIApp::CLI
         category = NPRCLIApp::Story.scrape_top_story.category
         teaser = NPRCLIApp::Story.scrape_top_story.teaser
         link = NPRCLIApp::Story.scrape_top_story.link
-        puts "#{category}: #{title}"
+        puts "TOP STORY: #{category}: #{title}"
+        puts "------"
         puts "Story: #{teaser}"
+        puts "------"
         puts "Link: #{link}"       
 
       elsif input == "list"

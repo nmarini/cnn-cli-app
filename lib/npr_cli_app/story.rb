@@ -1,18 +1,6 @@
 class NPRCLIApp::Story
   attr_accessor :title, :link, :category, :teaser
 
-  @@stories = []
-
-  def self.add_stories
-    @@stories << self.scrape_top_story
-    self.scrape_featured.each{|story| @@stories << story}
-  end
-
-  def self.all_stories
-    @@stories
-
-  end
-
   def self.scrape_top_story
     doc = Nokogiri::HTML(open("https://www.npr.org"))
     top_story = NPRCLIApp::Story.new
@@ -27,20 +15,19 @@ class NPRCLIApp::Story
   def self.scrape_featured
     scrape_stories = []
     doc = Nokogiri::HTML(open("https://www.npr.org"))
-
     featured_stories = doc.search('div.stories-wrap.stories-wrap-two')
+
     featured_stories.search('article.hp-item').each do |article|
-        story = NPRCLIApp::Story.new
 
-        story.title = article.search('h3').text
-        story.category = article.search('h2.slug').text.strip
-        story.link = article.search('a').attr('href').value
-        story.teaser = article.search('p.teaser').text.gsub("\"", "")
-        scrape_stories << story
-  end
-scrape_stories
-
-
+      story = NPRCLIApp::Story.new
+      story.title = article.search('h3').text
+      story.category = article.search('h2.slug').text.strip
+      story.link = article.search('a').attr('href').value
+      story.teaser = article.search('p.teaser').text.gsub("\"", "")
+      scrape_stories << story
+      
+    end
+    scrape_stories
   end
 
 end
