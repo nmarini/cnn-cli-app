@@ -1,5 +1,5 @@
 class NPRCLIApp::Story
-  attr_accessor :title, :link, :category
+  attr_accessor :title, :link, :category, :teaser
 
   @@stories = []
 
@@ -10,7 +10,7 @@ class NPRCLIApp::Story
 
   def self.all_stories
     @@stories
-
+binding.pry
   end
 
   def self.scrape_top_story
@@ -33,8 +33,9 @@ class NPRCLIApp::Story
         story.title = article.search('h3').text
         story.category = article.search('h2').text.strip
         story.link = article.search('a').attr('href').value
+        story.teaser = article.search('p.teaser').text.gsub("\"", "")
         scrape_stories << story
-
+binding.pry
   end
 
 
