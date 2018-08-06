@@ -10,7 +10,7 @@ class NPRCLIApp::Story
 
   def self.all_stories
     @@stories
-binding.pry
+
   end
 
   def self.scrape_top_story
@@ -21,7 +21,7 @@ binding.pry
     top_story.link = doc.search('div.story-text a')[1].attr('href')
     top_story.teaser = doc.search('p.teaser').text.gsub("\"", "")
     top_story
-    binding.pry
+
   end
 
   def self.scrape_featured
@@ -33,13 +33,12 @@ binding.pry
         story = NPRCLIApp::Story.new
 
         story.title = article.search('h3').text
-        story.category = article.search('h2').text.strip
+        story.category = article.search('h2.slug').text.strip
         story.link = article.search('a').attr('href').value
         story.teaser = article.search('p.teaser').text.gsub("\"", "")
         scrape_stories << story
-
   end
-
+scrape_stories
 
 
   end

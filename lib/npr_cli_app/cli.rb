@@ -1,5 +1,7 @@
 class NPRCLIApp::CLI
 
+  @@categories = []
+
   def call
     puts "Welcome to the NPR CLI App! Get the most up-to-date news here from NPR!"
     category_menu
@@ -14,8 +16,10 @@ class NPRCLIApp::CLI
   end
 
   def list_categories
+    
     puts "News Categories:"
-   NPRCLIApp::Story.scrape_featured.each.with_index(1){|story, i| puts "#{i}. #{story.category}"}
+   NPRCLIApp::Story.scrape_featured.each{|story| @@categories << story.category}
+   @@categories.uniq.each.with_index(1){|category, i| puts "#{i}. #{category}" if category =~ /[a-z]/i}
   end
 
   # def add_stories
@@ -23,12 +27,18 @@ class NPRCLIApp::CLI
   # end
 
   def instructions
-    puts "Please enter"
-    puts "- a number that corresponds to your choice"
+    puts "ENTER:"
+    puts "- \"LIST\"  to review the list of categories"
+    puts "- The name of the category to view it's stories"
+    
+    a number that corresponds to your choice"
     puts "OR"
     puts "- type \"top story\" to view NPR's Top Story"
     puts "OR"
+    puts "- tpe \"list\" to review the list of categories"
+    puts "OR"
     puts "- type \"exit\" to leave:"
+    
   end
 
   def category_menu
@@ -39,26 +49,40 @@ class NPRCLIApp::CLI
     until input == "exit"
     instructions
       input = gets.strip.downcase
-      if input == "1"
-        puts "#{NPRCLIApp::Story.scrape_featured[0].category}"
-        puts "#{NPRCLIApp::Story.scrape_featured[0].title}"
-        puts "#{NPRCLIApp::Story.scrape_featured[0].link}"
-      elsif input == "2"
-        puts "#{NPRCLIApp::Story.scrape_featured[1].category}"
-        puts "#{NPRCLIApp::Story.scrape_featured[1].title}"
-        puts "#{NPRCLIApp::Story.scrape_featured[1].link}"
-      elsif input == "3"
-        puts "#{NPRCLIApp::Story.scrape_featured[2].category}"
-        puts "#{NPRCLIApp::Story.scrape_featured[2].title}"
-        puts "#{NPRCLIApp::Story.scrape_featured[2].link}"
+      
+      if @@categories.include?(input)
+        NPRCLIApp::Story.scrape_featured.each do |story| 
+          if story.category == input
+            puts "#{story.title}"
+            puts "#{story.category}"
+            puts "#{story.teaser}"
+            puts "#{story.link}"
+          else 
+            nil
+          end 
+        end 
+      #   puts "#{NPRCLIApp::Story.scrape_featured[].category}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[0].title}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[0].link}"
+      # elsif input == "2"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[1].category}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[1].title}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[1].link}"
+      # elsif input == "3"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[2].category}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[2].title}"
+      #   puts "#{NPRCLIApp::Story.scrape_featured[2].link}"
 
       elsif input == "top story"
-        puts "#{NPRCLIApp::Story.scrape_top_story.category}"
         puts "#{NPRCLIApp::Story.scrape_top_story.title}"
+        puts "#{NPRCLIApp::Story.scrape_top_story.category}"
+        puts "#{NPRCLIApp::Story.scrape_top_story.teaser}"
         puts "#{NPRCLIApp::Story.scrape_top_story.link}"
-      else
-        top_story
+        
+
+      elsif input == "list"
         list_categories
+      else
         instructions
       end
     end
