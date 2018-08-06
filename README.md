@@ -1,5 +1,9 @@
 # NprCliApp
 
+Welcome!! The NPR CLI APP is available for you to use and access the most up-to-date news on NPR's website, npr.org.  
+The app lets you view NPR's Top Story, along with a list of news categories to choose from.
+You can explore each news category, viewing each story belonging to that news category.  
+
 ## Installation
 
 Add this line to your application's Gemfile:
