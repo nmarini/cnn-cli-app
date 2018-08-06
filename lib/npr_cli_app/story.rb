@@ -19,7 +19,9 @@ binding.pry
     top_story.title = doc.search('h3.title').first.text
     top_story.category = doc.search('h2.slug a').first.text.strip
     top_story.link = doc.search('div.story-text a')[1].attr('href')
+    top_story.teaser = doc.search('p.teaser').text.gsub("\"", "")
     top_story
+    binding.pry
   end
 
   def self.scrape_featured
@@ -35,7 +37,7 @@ binding.pry
         story.link = article.search('a').attr('href').value
         story.teaser = article.search('p.teaser').text.gsub("\"", "")
         scrape_stories << story
-binding.pry
+
   end
 
 
