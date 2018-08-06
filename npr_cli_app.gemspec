@@ -11,9 +11,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["'nmarini44@gmail.com'"]
 
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{The NPR CLI APP is available for you to use and access the most up-to-date news on NPR's website, npr.org.}
+  spec.description   = %q{The app lets you view NPR's Top Story, along with a list of news categories to choose from.
+  You can explore each news category, viewing each story belonging to that news category.}
+  spec.homepage      = "https://github.com/nmarini/npr-cli-app.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
