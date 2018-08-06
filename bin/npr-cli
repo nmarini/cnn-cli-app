@@ -7,3 +7,4 @@ NPRCLIApp::CLI.new.call
 # NPRCLIApp::Story.new.class.scrape_top_story
 # # NPRCLIApp::CLI.new.list_categories
 # NPRCLIApp::Story.new.class.scrape_featured
+ # NPRCLIApp::CLI.categories
