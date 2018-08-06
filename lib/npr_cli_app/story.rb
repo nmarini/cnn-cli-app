@@ -26,8 +26,8 @@ class NPRCLIApp::Story
     scrape_stories = []
     doc = Nokogiri::HTML(open("https://www.npr.org"))
 
-    featured_stories = doc.search('section.featured-group')
-    featured_stories.search('div.story-wrap').each do |article|
+    featured_stories = doc.search('div.stories-wrap.stories-wrap-two')
+    featured_stories.search('article.hp-item').each do |article|
         story = NPRCLIApp::Story.new
 
         story.title = article.search('h3').text
@@ -35,9 +35,10 @@ class NPRCLIApp::Story
         story.link = article.search('a').attr('href').value
         scrape_stories << story
 
-    end
-    scrape_stories
+  end
+
+
+
   end
 
 end
-1
