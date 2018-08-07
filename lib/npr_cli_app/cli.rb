@@ -7,8 +7,6 @@ class NPRCLIApp::CLI
     puts "Welcome to the NPR CLI App! Get the most up-to-date news here from NPR!"
     puts "-----------"
     top_story
-    puts "-----------"
-    puts "Here is a list of News Categories:"
     category_menu
     goodbye
 
@@ -16,8 +14,8 @@ class NPRCLIApp::CLI
 
   def top_story
     puts "NPR's Top Story:"
-  NPRCLIApp::Story.scrape_top_story.tap{|top_story| puts "#{top_story.title}"}
-
+    NPRCLIApp::Story.scrape_top_story.tap{|top_story| puts "#{top_story.title}"}
+    puts "-----------"
   end
 
   def list_categories
@@ -37,6 +35,7 @@ class NPRCLIApp::CLI
 
   def category_menu
     input = nil
+    puts "Here is a list of News Categories:"
     list_categories
     instructions
     until input == "exit"
