@@ -27,11 +27,11 @@ class NPRCLIApp::CLI
 
   def instructions
     puts "ENTER:"
-    puts "- \"LIST\"  to review the list of categories"
+    puts "- \"LIST\" to review the list of categories"
     puts "- \"The NAME of the CATEGORY\" to view stories related to that category"
     puts "- \"top story\" to view NPR's Top Story"
     puts "- \"list\" to review the list of categories"
-    puts "- \"instructions\" to review these instructions"
+    puts "- \"instructions\" to review these instructions again"
     puts "- \"exit\" to leave"
     
   end
