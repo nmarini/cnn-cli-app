@@ -1,7 +1,7 @@
 class NPRCLIApp::CLI
 
   @@categories = []
-    
+
 
   def call
     puts "Welcome to the NPR CLI App! Get the most up-to-date news here from NPR!"
@@ -30,10 +30,9 @@ class NPRCLIApp::CLI
     puts "- \"LIST\" to review the list of categories"
     puts "- \"The NAME of the CATEGORY\" to view stories related to that category"
     puts "- \"top story\" to view NPR's Top Story"
-    puts "- \"list\" to review the list of categories"
     puts "- \"instructions\" to review these instructions again"
     puts "- \"exit\" to leave"
-    
+
   end
 
   def category_menu
@@ -42,10 +41,10 @@ class NPRCLIApp::CLI
     instructions
     until input == "exit"
       input = gets.strip.downcase
-      
+
       if @@categories.include?(input)
         i = 1
-        NPRCLIApp::Story.scrape_featured.each do |story| 
+        NPRCLIApp::Story.scrape_featured.each do |story|
           if story.category.downcase == input
             puts "#{i}. #{story.category}: #{story.title}"
             puts "Teaser: #{story.teaser}"
@@ -53,7 +52,7 @@ class NPRCLIApp::CLI
             puts "-------------"
             i += 1
           end
-        end 
+        end
 
       elsif input == "top story"
         title = NPRCLIApp::Story.scrape_top_story.title
@@ -64,13 +63,13 @@ class NPRCLIApp::CLI
         puts "------"
         puts "Story: #{teaser}"
         puts "------"
-        puts "Link: #{link}"       
+        puts "Link: #{link}"
 
       elsif input == "list"
         list_categories
       else
         instructions
-      
+
       end
     end
   end
