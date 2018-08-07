@@ -22,7 +22,7 @@ class NPRCLIApp::CLI
 
   def list_categories
    NPRCLIApp::Story.scrape_featured.each{|story| @@categories << story.category.downcase}
-   @@categories.uniq.each.with_index(1){|category, i| puts "#{i}. #{category.upcase}" if category =~ /[a-z]/i}
+   @@categories.uniq.each.with_index(1){|category, i| puts "#{i}. #{category.upcase}"}
   end
 
   def instructions
@@ -42,7 +42,7 @@ class NPRCLIApp::CLI
     until input == "exit"
       input = gets.strip.downcase
 
-      if @@categories.include?(input)
+      if @@categories.include?(input) 
         i = 1
         NPRCLIApp::Story.scrape_featured.each do |story|
           if story.category.downcase == input
